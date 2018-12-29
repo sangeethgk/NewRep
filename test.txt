@@ -1,1 +1,4 @@
 This is a test file.
+Git is really surprising!
+this is an additional line going to test.txt
+this is another additional line going to test.txt
