@@ -1,0 +1,69 @@
+Git Commands - 09-Nov-2021
+
+241  mkdir mydir
+  242  cd mydir/
+  243  touch m1 m2 m3
+  244  git init
+  245  git add m1
+  246  git commit -m "m1"
+  247  git add m2
+  248  git commit -m "m2"
+  249  git add m3
+  250  git commit -m "m3"
+  251  git log --oneline
+  252  git branch feature1
+  253  git branch
+  254  git checkout feature1
+  255  touch f1
+  256  git add f1
+  257  git commit -m "f1"
+  258  git log --oneline
+  259  git checkout master
+  260  ls
+  261  touch m4
+  262  git add m4
+  263  git commit -m "m4"
+  264  git log --oneline
+  265  git checkout feature1
+  266  ls
+  267  git rebase master
+  268  ls
+  269  git log --oneline
+  270  cd ..
+  271  mkdir myproj
+  272  cd myproj/
+  273  touch app.java
+  274  git init
+  275  git add app.java
+  276  git commit -m "app.java file is added by master"
+  277  git status
+  278  git branch dev1
+  279  git branch dev2
+  280  git checkout dev1
+  281  git log
+  282  echo "app.java is modified by dev1" >> app.java
+  283  cat app.java
+from Raman Sharma to Everyone:    12:12  PM
+ 284  git add .
+  285  git commit -m "app.java -dev1"
+  286  cat app.java
+  287  git log --oneline
+  288  git checkout dev2
+  289  cat app.java
+  290  echo "app.java file is modified by dev2" >> app.java
+  291  git add app.java
+  292  git commit -m "app.java -dev2"
+  293  git log --oneline
+  294  git checkout master
+  295  git merge dev1
+  296  cat app.java
+  297  git log --oneline
+  298  git merge dev2
+  299  git mergetool
+  300  git mergetool --tool-help
+  301  git mergetool --tool=vimdiff
+  302  yum install vim -y
+  303  git mergetool --tool=vimdiff
+  304  git status
+  305  cat app.java
+  
