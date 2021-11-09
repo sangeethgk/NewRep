@@ -31,6 +31,38 @@
    31  docker image tag centos raman/centos
    32  docker images
    --======================
+   34  docker images
+   35  ls /var/lib/docker/image/overlay2/
+   36  ls /var/lib/docker/image/overlay2/imagedb/
+   37  ls /var/lib/docker/image/overlay2/imagedb/content/
+   38  ls /var/lib/docker/image/overlay2/imagedb/content/sha256/
+   39  ls /var/lib/docker/overlay2/
+   40  docker rmi ubuntu
+   41  ls /var/lib/docker/overlay2/
+   42  docker container run --it --name c1 centos
+   43  docker container run -it --name c1 centos
+   44  ls
+   45  docker container ls
+   46  docker ps
+   47  docker container ls --all
+   48  docker ps -a
+   49  docker container run -it --name c2 -d ubuntu
+   50  docker ps -a
+   51  docker start c1
+   52  docker ps -a
+   53  docker container stop c2
+   54  docker ps -a
+   55  docker container restart c2
+   56  docker ps -a
+   57  docker container kill c1
+   58  docker ps -a
+   59  docker start c1
+   60  docker ps -a
+   61  docker container pause c1
+   62  docker ps -a
+   63  docker container unpause c1
+   64  docker ps -a
+   --======================
    65  docker inspect c2
    66  docker stats c1
    67  docker stats c2
