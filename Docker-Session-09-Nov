@@ -30,3 +30,29 @@
    30  ls /var/lib/docker/
    31  docker image tag centos raman/centos
    32  docker images
+   --======================
+   65  docker inspect c2
+   66  docker stats c1
+   67  docker stats c2
+   68  docker container run -it --name c3 -m 8m nginx
+   69  docker start c3
+   70  docker ps -a
+   71  docker stats c3
+   72  docker top c3
+   73  docker logs c3
+   74  docker container run -it -c 614 -d nginx
+   75  docker ps
+   76  docker inspect 03293abdab2a
+   77  docker inspect 03293abdab2a | grep Cp
+   78  docker container --help
+   79  docker container update --help
+   80  docker container update -m 10m c1
+   81  docker stats c1
+   82  docker container update -m 10m -c 614 c1
+   83  docker ps
+   84  docker rm 03293abdab2a
+   85  docker container stop 03293abdab2a
+   86  docker rm 03293abdab2a
+   87  docker ps
+   88  docker ps -a
+   89  docker rm -f c3
