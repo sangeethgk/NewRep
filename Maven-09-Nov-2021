@@ -1,2 +1,2 @@
 mvn archetype:generate
-ava -cp target/myproj-1.0-SNAPSHOT.jar com.raman.App
+java -cp target/myproj-1.0-SNAPSHOT.jar com.raman.App
