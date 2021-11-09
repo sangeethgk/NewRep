@@ -1,4 +1,32 @@
-apt update
-apt install docker.io -y
-docker --version
-docker version
+    1  apt update
+    2  apt install docker.io -y
+    3  docker --version
+    4  docker version
+    5  docker --help
+    6  docker ps
+    7  docker container ls
+    8  docker pull ubuntu
+    9  docker images
+   10  docker pull ubuntu:18.04
+   11  docker image ls
+   12  docker pull centos
+   13  docker image ls
+   14  docker pull centos:7
+   15  docker images
+   16  docker images centos
+   17  docker images centos:7
+   18  docker images cent*
+   19  docker images java
+   20  docker images
+   21  docker pull nginx
+   22  docker pull abc
+   23  docker search nginx
+   24  docker search webapp
+   25  docker search ramansharma95/webapp
+   26  docker images
+   27  docker image rm nginx
+   28  docker images
+   29  docker rmi ubuntu:18.04
+   30  ls /var/lib/docker/
+   31  docker image tag centos raman/centos
+   32  docker images
