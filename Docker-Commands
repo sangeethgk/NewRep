@@ -1,0 +1,57 @@
+Docker containers are running docker images and is used to deploy the applications.
+
+Create Containers
+-------------------
+docker container run -it -d ubuntu   # it interactive d demon  when images are running it is called containers
+docker container run -it  ubuntu # it runs the container in attach mode
+docker run -it --name test -d ubuntu # it will create container with name test
+ 
+docker ps   // list running images
+docker container ls 
+docker container ls --all
+docker ps -a    //list all the continers 
+docker top <<container>> # it shows the processes in the container
+docker stats <<container>> # it shows mem/cpu usage in the container
+sudo docker run -m 4m -dit --name web1 nginx   # running the container with a limit of 4mb
+
+ sudo docker run -c 614 -dit --name db nginx
+ sudo docker run -c 410 -dit --name web nginx /nginx.sh
+  #Will give 60% to the db container (614 is 60% of 1024) and 40% to the web containe
+docker pause <<containerid>> # to pause the container
+docker unpause <<containerid> # to unpause the container
+docker logs <<Containerid>> # it shows the logs of the container
+docker inspect <<containerid>> # it is to inspect the container
+docker stop <<containerid>> # it will stop the container with exit code 0
+ docker kill <<container id>> # to stop or kill forcefully with exit code 137
+ docker exec -it <<Container id>> bash # command to go inside the container
+
+ docker rm <<container id>> # to remove the stopped container
+docker rm -f <<container id>> # remove the container(stop/star) forcefully
+docker rm -f $(docker ps -a -q) # to remove all the containers forcefully
+docker ps -a | grep "ubuntu" | awk '{print $1}' | xargs docker rm -f # it will remove the container which is referenced by ubuntu image
+docker rmi $(docker images -q) # to remove all the images -q quiet
+ #create a user using adduser 
+ docker exec -it -u raman test bash
+# to copy file from host machine to container
+docker cp test.html container:/test # test.html is the file on host machine under test directory of container
+Port forwarding
+#Run the following command to do the port forwarding with Host Machine
+docker container run -it --name webserver -p 80:80 -d ubuntu
+
+# To run the application on my container and access it through web browser
+docker exec -it webserver bash # Go inside the container
+
+#Run the following commands in the container
+apt update # inside the container it will update the apt repo
+apt install apache2 -y # it will install the apache in the container
+service apache2 start # it will start apache service in container
+
+goto your browser and use public ip address and you will be able to see Apache defualt page
+
+exit # to exit from the container
+
+on your local machine create a file called test.html and write some html code
+
+docker cp test.html webserver:/var/www/html/ # copy the test.html file to the container
+
+got to browser and PublicIP/test.html, you will be able to see the test.html output on browser
