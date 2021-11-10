@@ -1,0 +1,30 @@
+118  docker images
+  119  docker ps -a
+  120  docker rm -f web
+  121  docker container run -it --name web -d ubuntu
+  122  docker exec -it web bash
+  123  docker cp test.html web:/var/www/html
+  124  docker inspect web
+  125  curl 172.17.0.2
+  126  docker commit web webimg
+  127  docker image ls
+  128  docker rm -f web
+  129  docker ps -a
+  130  docker container run -it --name web -p 80:80 -d webimg
+  131  docker exec -it web bash
+  132  docker images
+  133  docker save webimg > myimg.tar
+  134  ls
+  135  docker rm -f web
+  136  docker rmi webimg
+  137  docker images
+  138  ls
+  139  docker load < myimg.tar
+  140  docker images
+  141  docker image tag webimg ramansharma95/webimg
+  142  docker images
+  143  docker login
+  144  docker logout
+  145  docker login
+  146  docker push webimg
+  147  docker push ramansharma95/webimg
