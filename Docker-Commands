@@ -1,5 +1,13 @@
 blog: http://www.devopsworld.co.in/p/docker-installation.html
 
+Ubutu IPs
+Server 1 172.31.21.169
+Server 2 172.31.29.155
+Server 3 172.31.31.207
+
+
+
+
 Docker containers are running docker images and is used to deploy the applications.
 
 Create Containers
